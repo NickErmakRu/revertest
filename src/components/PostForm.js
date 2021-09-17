@@ -7,6 +7,7 @@ export default class PostForm extends React.Component {
     this.state = {
       title: '',
       description: '',
+      tags: [],
     };
   }
 
