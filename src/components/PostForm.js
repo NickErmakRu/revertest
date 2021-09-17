@@ -8,7 +8,6 @@ export default class PostForm extends React.Component {
       title: '',
       description: '',
       tags: [],
-      isError: false,
     };
   }
 
