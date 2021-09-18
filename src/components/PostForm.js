@@ -7,20 +7,22 @@ export default class PostForm extends React.Component {
     this.state = {
       title: '',
       description: '',
-      tags: [],
+      tags: '',
     };
   }
 
   submitHandler = event => {
     event.preventDefault();
 
-    const {title, description} = this.state;
+    const {title, description, tags} = this.state;
 
     const newPost = {
-      title, description, id: Date.now().toString()
+      title, description, tags, id: Date.now().toString()
     };
 
     console.log(newPost);
+
+    this.setState({title: '', description: '', tags: ''});
   }
 
   changeInputHandler = event => {
@@ -52,6 +54,15 @@ export default class PostForm extends React.Component {
             name='description'
             onChange={this.changeInputHandler}
           />
+          {/* <label htmlFor='title'>Теги</label>
+          <input 
+            type='text' 
+            className='form-control' 
+            id='tags' 
+            value={this.state.tags}
+            name='tags'
+            onChange={this.changeInputHandler}
+          /> */}
         </div>
         <button className='btn btn-success' type='submit'>Создать</button>
       </form>
